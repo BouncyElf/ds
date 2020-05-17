@@ -1,4 +1,4 @@
-module github.com/BouncyElf/ds/lru
+module github.com/BouncyElf/ds
 
 go 1.13
 
