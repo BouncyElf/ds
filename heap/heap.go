@@ -7,6 +7,9 @@ const (
 )
 
 func down(data []int, i int) {
+	if i < 0 {
+		return
+	}
 	for now := i; now*2+1 < len(data); {
 		flag := now*2 + 1
 		if now*2+2 < len(data) && data[now*2+2] < data[now*2+1] {
@@ -22,6 +25,9 @@ func down(data []int, i int) {
 }
 
 func up(data []int, i int) {
+	if len(data) == 0 || i >= len(data) {
+		return
+	}
 	for now := i; (now-1)/2 >= 0 && data[(now-1)/2] > data[now]; now = (now - 1) / 2 {
 		data[now], data[(now-1)/2] = data[(now-1)/2], data[now]
 	}
