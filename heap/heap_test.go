@@ -10,6 +10,7 @@ import (
 func TestHeap(t *testing.T) {
 	data := []int{1, 5, 9, 9, 8, 2, 0, 3}
 	h := New(data)
+	assert.Equal(t, 0, h.Top())
 	assertHeapEqualSlice(t, h, data)
 
 	data = []int{9, 2, 0, 1, 99, 2, 3, 5, 7, 0}
