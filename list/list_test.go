@@ -37,15 +37,18 @@ func TestDoubleList_Remove(t *testing.T) {
 		l.Remove(l.Head())
 		l.Remove(l.Tail())
 	}
+	l.Remove(new(DoubleListNode))
 	assert.Equal(t, 0, l.Len())
 	for i := range make([]struct{}, 10) {
 		l.Append(i)
 	}
+	l.Remove(new(DoubleListNode))
 	assert.Equal(t, 10, l.Len())
 	for range make([]struct{}, 10) {
 		l.Remove(l.Head())
 		l.Remove(l.Tail())
 	}
+	l.Remove(new(DoubleListNode))
 	assert.Equal(t, 0, l.Len())
 	assert.Equal(t, l.head, l.tail.prev)
 	assert.Equal(t, l.tail, l.head.next)
