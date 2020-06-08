@@ -74,9 +74,12 @@ func (d *DoubleList) Tail() *DoubleListNode {
 	return d.tail.prev
 }
 
-func (d *DoubleList) Remove(node *DoubleListNode) {
-	if node == nil || node == d.head || node == d.tail || node.l != d {
-		return
+func (d *DoubleList) Remove(node *DoubleListNode) interface{} {
+	if node == nil {
+		return nil
+	}
+	if node == d.head || node == d.tail || node.l != d {
+		return node.Value
 	}
 	for now := d.head.next; now != d.tail; now = now.next {
 		if now == node {
@@ -86,6 +89,7 @@ func (d *DoubleList) Remove(node *DoubleListNode) {
 			break
 		}
 	}
+	return node.Value
 }
 
 func (d *DoubleList) Slice() []interface{} {
