@@ -17,7 +17,7 @@ func copyRandomList1(head *Node) *Node {
 	if head == nil {
 		return nil
 	}
-	res, now, m := new(Node), new(Node), map[*Node]*Node{}
+	res, now, m := new(Node), new(Node), make(map[*Node]*Node)
 	for temp := head; temp != nil; temp = temp.Next {
 		if temp == head {
 			res.Val = temp.Val
