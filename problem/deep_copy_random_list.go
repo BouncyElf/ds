@@ -23,13 +23,12 @@ func copyRandomList1(head *Node) *Node {
 			res.Val = temp.Val
 			now = res
 		} else {
-			now.Val = temp.Val
-		}
-		m[temp] = now
-		if temp.Next != nil {
-			now.Next = new(Node)
+			now.Next = &Node{
+				Val: temp.Val,
+			}
 			now = now.Next
 		}
+		m[temp] = now
 	}
 	for origin, new := head, res; origin != nil; origin, new = origin.Next, new.Next {
 		if origin.Random == nil {
