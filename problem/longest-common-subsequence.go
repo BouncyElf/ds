@@ -1,5 +1,11 @@
 package problem
 
+/*
+问题：
+1143.最长公共子序列
+https://leetcode-cn.com/problems/longest-common-subsequence/
+*/
+
 // dp[i][j] 代表l长度为i，r长度为j的时候最长的公共子序列个数
 // 易得：
 // 当l[i] == r[j]时，dp[i][j] = dp[i-1][j-1]+1

@@ -2,7 +2,7 @@ package problem
 
 /*
 问题：
-深拷贝带有随机指针的链表
+138.复制带随机指针的链表
 https://leetcode-cn.com/problems/copy-list-with-random-pointer/
 */
 
